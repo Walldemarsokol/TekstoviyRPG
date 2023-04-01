@@ -1,6 +1,9 @@
 from time import sleep
 from character import *
 from classes import *
+from game_over import game_over_loose
+from write_function import *
+
 
 def choise_race():
     print(">Выберите рассу:\n"
@@ -67,10 +70,34 @@ def class_choise():  # метод выбор класса
     else:
         return random_class()
 
-def choise_1():
+def choise_1(list): # начальное действие в пещере
+    char_class = ''
+    for find_char_class in list:
+        char_class = find_char_class
+        break
     print('Выберите действие:\n'
           '>вернуться назад к месту пробуждения (1)\n'
-          '>пройти дальше ')
+          '>пройти туда,откуда дует ветер (2)\n'
+          '>подождать немного любуясь светом с потолка пещеры (3)')
+    print()
+    data = input('enter number: ')
+    if data == "1":
+        print('-'*80)
+        print("Вы вернулись к месту, где вы очнулись.\n"
+              "В темноте трудно что-то обнаружить без факела.\n"
+              "Но вы все таки попытались проверить на ощупь.\n"
+              "Вам удалось обнаружить что-то...")
+        write_weapon(char_class)
+        return choise_1()
+    elif data == "2":
+        print()
+        return 1
+    elif data == "3":
+        print()
+        game_over_loose()
+        return
+
+
 def location_1():
 
     print('-' * 80)
@@ -102,8 +129,8 @@ def location_1():
           'Вы вернулись в темноту,что бы глаза снова смогли видеть в пещере.')
     sleep(5)
     print(">В одном из направлений Вам кажется,что холод сильнее.\n"
-          "Видимо сквозняк оттуда.")
-
+          "Видимо сквозняк доносится оттуда.")
+    choise_1()
 
 
 
