@@ -1,2 +1,5 @@
+from intro import start_intro
+
+
 def new_game():
-    return 1
+    return start_intro()
