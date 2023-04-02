@@ -1,16 +1,20 @@
 import random
 
 def human_race():
-    return 1
+    human = 'Human'
+    return human
 
 def orc_race():
-    return 1
+    orc = 'Orc'
+    return orc
 
 def elf_race():
-    return 1
+    elf = 'elf'
+    return elf
 
 def dwarf_race():
-    return 1
+    dwarf = 'Dwarf'
+    return dwarf
 
 def random_race(): # рандомный выбор рассы
     rand = random.randint(1,4)

@@ -9,5 +9,5 @@ greetings()
 
 # test = input('enter: ')
 # path_on_road(test)
-location_1()
+location_cave()
 
